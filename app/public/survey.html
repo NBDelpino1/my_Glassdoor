@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <!-- Chosen jQuery Plugin (Make selects easier to manage) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link href="css/app-styles.css" rel="stylesheet">
+
+    <title>Talentpool</title>
+</head>
+<body>
+
+    <!-- NAVBAR xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+    <nav class="navbar navbar-custom navbar-expand-lg navbar-light pt-0 pb-0">
+        <a class="navbar-brand" href="index.html">
+            <img src="images/app-logo.png" alt="brand logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav mr-auto">
+                <a class="nav-item nav-link active" href="#">Jobs <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">Company Reviews</a>
+                <a class="nav-item nav-link" href="#">Salaries</a>
+                <a class="nav-item nav-link" href="#">Interviews</a>
+                <a class="nav-item nav-link" href="#">Know Your Worth</a>
+            </div>
+            <!--TODO:WORK OUT THE RESPONSIVENESS OF THESE ELEMENTS-->
+            <div class="navbar-nav">
+                <div  class="nav-item-div pr-3">
+                    <img src="images/job-icons/heart.png" class="nav-link-icon" alt="calender icon">
+                </div>
+                <div class="nav-item-div pr-3">
+                    <img src="images/navbar-icons/user.png" class="nav-link-icon" alt="user icon">
+                </div>
+                <div class="nav-item-div pr-2 border-divide ">
+                    <a class="nav-item nav-link" href="#">Write Review</a>
+                </div>
+                <div class=" nav-item-div pr-2 pl-2 border-divide ">
+                    <a class="nav-item nav-link" href="#">For Employers</a>
+                </div>
+                <div class="nav-item-div pl-3">
+                    <img src="images/navbar-icons/briefcase.png" class="nav-link-icon" alt="chat icon">
+                    <a class="nav-item nav-link nav-link-icon" href="#">Post Jobs Free</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SEARCH BAR xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+    <div class="searchbar-wrapper sticky-top pt-3 pb-3 mb-3">
+        <div class="container">
+            <form>
+                <div class="row">
+                    <div class="col-sm-5">
+                        <!--SEARCH INPUT-->
+                        <label class="sr-only" for="searchbar-search-field">Name</label>
+                        <input type="text" class="form-control" id="searchbar-search-field" placeholder="Job Title, Keywords, or Company">
+                    </div>
+                    <div class="col-sm-2">
+                        <!--DROPDOWN-->
+                        <label class="sr-only" for="searchbar-jobs-dropdown-button">Username</label>
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0 d-none d-sm-block">
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" id="searchbar-jobs-dropdown-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Jobs
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Companies</a>
+                                    <a class="dropdown-item" href="#">Salaries</a>
+                                    <a class="dropdown-item" href="#">Interviews</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <!--LOCATION INPUT-->
+                        <label class="sr-only" for="searchbar-location-field">Name</label>
+                        <input type="text" class="form-control d-none d-sm-block" id="searchbar-location-field" placeholder="Location">
+                        <!--LOCATION INPUT-->
+                    </div>
+                    <div class="col-sm-2">
+                        <!--SEARCH BUTTON-->
+                        <button type="submit" class="btn d-none d-sm-block green-hover-effect" id="searchbar-search-button">Search</button>
+                        <!--SEARCH BUTTON-->
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- FILTERS xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+    <div class="container shadow-sm p-0" id="filters-wrapper">
+        <nav class="navbar filterbar navbar-expand-lg d-none d-sm-block pt-3 pb-3">
+            <div class="collapse navbar-collapse">
+                <form class="form-inline mr-auto">
+                    <div class="form-group mr-3">
+                        <div class="dropdown">
+                            <button class="btn filters-dropdown-button dropdown-toggle" type="button" id="job-type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Job Type
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">All Job Types</a>
+                                <a class="dropdown-item" href="#">Full-time</a>
+                                <a class="dropdown-item" href="#">Part-time</a>
+                                <a class="dropdown-item" href="#">Contract</a>
+                                <a class="dropdown-item" href="#">Internship</a>
+                                <a class="dropdown-item" href="#">Temporary</a>
+                                <a class="dropdown-item" href="#">Apprentice/Training</a>
+                                <a class="dropdown-item" href="#">Entry Level</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group mr-3">
+                        <div class="dropdown">
+                            <button class="btn filters-dropdown-button dropdown-toggle" type="button" id="date-posted" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Date Posted
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Last Day</a>
+                                <a class="dropdown-item" href="#">Last Week</a>
+                                <a class="dropdown-item" href="#">Last 2 Weeks</a>
+                                <a class="dropdown-item" href="#">Any Time</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group mr-3">
+                        <div class="dropdown">
+                            <button class="btn filters-dropdown-button dropdown-toggle" type="button" id="salary-range" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Salary Range
+                            </button>
+                            <div id="filter-range-wrapper" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <div class="form-group">
+                                    <label for="range" class="sr-only">Example Range input</label>
+                                    <input type="range" min="1" max="100000" value="50" class="form-control-range" id="range">
+                                </div>
+
+                                <p class="mb-0">Amount: $<span id="range-value"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group mr-3">
+                        <div class="dropdown">
+                            <button class="btn filters-dropdown-button dropdown-toggle" type="button" id="distance" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Distance
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Exact Location</a>
+                                <a class="dropdown-item" href="#">5 Miles</a>
+                                <a class="dropdown-item" href="#">10 Miles</a>
+                                <a class="dropdown-item" href="#">15 Miles</a>
+                                <a class="dropdown-item" href="#">25 Miles</a>
+                                <a class="dropdown-item" href="#">50 Miles</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group mr-3">
+                        <div class="dropdown">
+                            <button class="btn filters-dropdown-button dropdown-toggle" type="button" id="more" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                More
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">City: All Cities</a>
+                                <a class="dropdown-item" href="#">Rating: All Ratings</a>
+                                <a class="dropdown-item" href="#">Industry: All Industries</a>
+                                <a class="dropdown-item" href="#">Company: All Companies</a>
+                                <a class="dropdown-item" href="#">Size: All Sizes</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <form class="form-inline my-2 my-lg-0">
+                    <button class="btn blue-ghost-button my-2 my-sm-0" type="submit">Create Job Alert</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+
+    <!-- MAIN CONTENT xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+    <div class="container" id="main-content-wrapper">
+        <div class="row">
+            <!-- MAIN CONTENT LEFT COL  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+            <div id="main-content-left-col" class="col-sm-5 shadow-sm">
+                <div class="job-listing-wrapper">
+                    <div class="job-image float-left mr-2">
+                        <a href=""><img src="images/job-icons/temp-job-img.png" class="job-info-image"></a>
+                    </div>
+                    <div class="job-details mt-2">
+                        <h6 class="job-listing-title mb-1">UX/UI Designer</h6>
+                        <p class="job-listing-company mb-1 ">Walt Disney Company - Orlando, FL</p>
+                        <p class="job-listing-salary mb-1">$41K-$61K <span class="ml-1">(Talentpool Est.)</span></p>
+                        <i class="job-listing-like far fa-heart fa-lg"></i>
+                        <p class="job-listing-time mb-1">14 days ago</p>
+                    </div>
+                    <a href=""><span class="job-listing-link"></span></a>
+                </div>
+                <div class="job-listing-wrapper">
+                    <div class="job-image float-left mr-2">
+                        <a href=""><img src="images/job-icons/temp-job-img.png" class="job-info-image"></a>
+                    </div>
+                    <div class="job-details mt-2">
+                        <h6 class="job-listing-title mb-1">UX/UI Designer</h6>
+                        <p class="job-listing-company mb-1 ">Walt Disney Company - Orlando, FL</p>
+                        <p class="job-listing-salary mb-1">$41K-$61K <span class="ml-1">(Talentpool Est.)</span></p>
+                        <i class="job-listing-like far fa-heart fa-lg"></i>
+                        <p class="job-listing-time mb-1">14 days ago</p>
+                    </div>
+                    <a href=""><span class="job-listing-link"></span></a>
+                </div>
+                <div class="job-listing-wrapper">
+                    <div class="job-image float-left mr-2">
+                        <a href=""><img src="images/job-icons/temp-job-img.png" class="job-info-image"></a>
+                    </div>
+                    <div class="job-details mt-2">
+                        <h6 class="job-listing-title mb-1">UX/UI Designer</h6>
+                        <p class="job-listing-company mb-1 ">Walt Disney Company - Orlando, FL</p>
+                        <p class="job-listing-salary mb-1">$41K-$61K <span class="ml-1">(Talentpool Est.)</span></p>
+                        <i class="job-listing-like far fa-heart fa-lg"></i>
+                        <p class="job-listing-time mb-1">14 days ago</p>
+                    </div>
+                    <a href=""><span class="job-listing-link"></span></a>
+                </div>
+                <div class="job-listing-wrapper">
+                    <div class="job-image float-left mr-2">
+                        <a href=""><img src="images/job-icons/temp-job-img.png" class="job-info-image"></a>
+                    </div>
+                    <div class="job-details mt-2">
+                        <h6 class="job-listing-title mb-1">UX/UI Designer</h6>
+                        <p class="job-listing-company mb-1 ">Walt Disney Company - Orlando, FL</p>
+                        <p class="job-listing-salary mb-1">$41K-$61K <span class="ml-1">(Talentpool Est.)</span></p>
+                        <i class="job-listing-like far fa-heart fa-lg"></i>
+                        <p class="job-listing-time mb-1">14 days ago</p>
+                    </div>
+                    <a href=""><span class="job-listing-link"></span></a>
+                </div>
+                <div class="job-listing-wrapper">
+                    <div class="job-image float-left mr-2">
+                        <a href=""><img src="images/job-icons/temp-job-img.png" class="job-info-image"></a>
+                    </div>
+                    <div class="job-details mt-2">
+                        <h6 class="job-listing-title mb-1">UX/UI Designer</h6>
+                        <p class="job-listing-company mb-1 ">Walt Disney Company - Orlando, FL</p>
+                        <p class="job-listing-salary mb-1">$41K-$61K <span class="ml-1">(Talentpool Est.)</span></p>
+                        <i class="job-listing-like far fa-heart fa-lg"></i>
+                        <p class="job-listing-time mb-1">14 days ago</p>
+                    </div>
+                    <a href=""><span class="job-listing-link"></span></a>
+                </div>
+                <div class="job-listing-wrapper">
+                    <div class="job-image float-left mr-2">
+                        <a href=""><img src="images/job-icons/temp-job-img.png" class="job-info-image"></a>
+                    </div>
+                    <div class="job-details mt-2">
+                        <h6 class="job-listing-title mb-1">UX/UI Designer</h6>
+                        <p class="job-listing-company mb-1 ">Walt Disney Company - Orlando, FL</p>
+                        <p class="job-listing-salary mb-1">$41K-$61K <span class="ml-1">(Talentpool Est.)</span></p>
+                        <i class="job-listing-like far fa-heart fa-lg"></i>
+                        <p class="job-listing-time mb-1">14 days ago</p>
+                    </div>
+                    <a href=""><span class="job-listing-link"></span></a>
+                </div>
+                <div class="job-listing-wrapper">
+                    <div class="job-image float-left mr-2">
+                        <a href=""><img src="images/job-icons/temp-job-img.png" class="job-info-image"></a>
+                    </div>
+                    <div class="job-details mt-2">
+                        <h6 class="job-listing-title mb-1">UX/UI Designer</h6>
+                        <p class="job-listing-company mb-1 ">Walt Disney Company - Orlando, FL</p>
+                        <p class="job-listing-salary mb-1">$41K-$61K <span class="ml-1">(Talentpool Est.)</span></p>
+                        <i class="job-listing-like far fa-heart fa-lg"></i>
+                        <p class="job-listing-time mb-1">14 days ago</p>
+                    </div>
+                    <a href=""><span class="job-listing-link"></span></a>
+                </div>
+                <!--PAGINATION-->
+                <div id="page-wrapper" class="pt-4 pr-3 pb-4 pr-3">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination pagination-lg justify-content-end mb-0">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true"><i class="fas fa-angle-left fa-lg"></i></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true"><i class="fas fa-angle-right fa-lg"></i></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!--CREATE JOB ALERT DIV-->
+                <div id="create-job-alert-wrapper">
+                    <form class="form-inline">
+                        <div class="form-group mx-sm-3 mb-2 mr-2">
+                            <label for="email-address" class="sr-only">Password</label>
+                            <input type="email" class="form-control" id="email-address" placeholder="Email Address">
+                        </div>
+                        <button type="submit" class="btn blue-ghost-button mb-2">Create Job Alert</button>
+                    </form>
+                </div>
+                <div id="related-searches-wrapper" class="p-3">
+                    <h6>People Also Searched</h6>
+                    <a href="" class="blue-text">user experience, senior user experience designer, ui ux designer, information architect, user experience lead, user experience designer, user experience architect, user researcher, director of user experience, ui</a>
+                </div>
+                <div id="related-companies-wrapper" class="p-3">
+                    <h6>Related Companies:</h6>
+                    <a href="" class="blue-text">Blue Acorn, The Bouqs Company, Puppet, Glu Mobile, Raybeam, WIREWAX, Walt Disney Company, Novateur Technologies, Disney Parks & Resorts, Marvel</a>
+                </div>
+                <div id="main-content-left-footer" class=" pt-4 text-center">
+                   <div>
+                       <a href="" class="mr-2 blue-text">Help / Contact Us</a>
+                       <a href="" class="mr-2 blue-text">Terms of Use</a>
+                       <a href="">Privacy and Cookies</a>
+                   </div>
+                    <div class="p-3">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="main-content-left-dropdown-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                United States
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">France</a>
+                                <a class="dropdown-item" href="#">India</a>
+                                <a class="dropdown-item" href="#">Ireland</a>
+                                <a class="dropdown-item" href="#">China</a>
+                                <a class="dropdown-item" href="#">United Kingdom</a>
+                                <a class="dropdown-item" href="#">Canada</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center p-5">
+                        <p>Talentpool © 20017-2018, Talentpool, Inc. "Talentpool" and logo are proprietary trademarks of Talentpool, Inc.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- MAIN CONTENT RIGHT COL  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+            <div id="main-content-right-col" class="col-sm-7 shadow-sm">
+                <div id="temp-company-bg-img"></div>
+                <div id="selected-job-listing-wrapper">
+                    <div class="job-details mt-1">
+                        <h5 class="job-listing-title mb-3">UX/UI Designer</h5>
+                        <div class="job-image float-left mr-2">
+                            <a href=""><img src="images/job-icons/temp-job-rating.png" class="job-info-image"></a>
+                        </div>
+                        <p class="job-listing-company company-name mb-3 ">Walt Disney Company - Orlando, FL</p>
+                        <p class="job-listing-salary mb-0">$41K-$61K <span class="ml-1">(Talentpool Est.)</span></p>
+                        <div class="job-listing-buttons-wrapper">
+                            <button type="button" class="btn blue-hover-effect"><i class="far fa-share-square fa-lg"></i> Apply Now</button>
+                            <button type="button" class="btn blue-ghost-button"><i class="far fa-heart fa-lg"></i> Save</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="selected-job-listing-tab-wrapper">
+                    <ul class="nav nav-tabs sticky-top mb-0 selected-job-listing-tabs" role="tablist">
+                        <li class="nav-item p-2">
+                            <a class="nav-link active" id="job-tab" data-toggle="tab" href="#job" role="tab" aria-controls="home" aria-selected="true">Job</a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="nav-link" id="company-tab" data-toggle="tab" href="#company" role="tab" aria-controls="profile" aria-selected="false">Company</a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="nav-link" id="rating-tab" data-toggle="tab" href="#ratings" role="tab" aria-controls="contact" aria-selected="false">Rating</a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="contact" aria-selected="false">Reviews</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <!--Jobs info goes here-->
+                        <div class="tab-pane fade show active p-4" id="job" role="tabpanel" aria-labelledby="job-tab">
+
+                           <div class="job-tab-section mb-4">
+                               <h6>Job Description</h6>
+                               <p>The UX/UI Designer is responsible for delivering user-centric experiences across Disney Interactive products and platforms to support memorable storytelling for Disney’s core brands, advocating user centred design process to meet the need of our business across all consumer touch points. This position is 60% UX and 40% design support.</p>
+                           </div>
+                            <div class="job-tab-section mb-4">
+                                <h6>Basic Qualifications</h6>
+                                <ul>
+                                    <li>Know how to drive brand identity and creative concepts across all areas including Mobile, Tablet and Web Experience (designing for mobile/tablet interfaces, social platforms, ecommerce, and conversion-driven design).</li>
+                                    <li>Depth of UCD experience and ability to draw heavily on analytics & insights to guide solutions.</li>
+                                    <li>Experience with UX artefacts, processes and principles including fidelity design (conceptual, lo/med/hi), user/customer journey mapping, IA, functional prototyping.</li>
+                                    <li>Highly competent in modern web design practices such responsive design and visual design for UIs.</li>
+                                    <li>It is absolutely vital that you have solid experience and understanding of the digital landscape and have delivered integrated and multi-channel campaigns.</li>
+                                    <li>Ability to thrive in a fast pace environment, and to prioritise and allocate work in order to meet delivery deadlines.</li>
+                                    <li>Naturally advanced skills in Design Tools, such as Adobe Creative Suite, Sketch, etc; and a strong understanding of HTML5 & CSS.</li>
+                                    <li>Understanding of technical solution development with focus on front-end.</li>
+                                    <li>Strong team player, able to work in a busy and demanding environment.</li>
+                                    <li>Experience in retail/eCommerce space and children’s entertainment is highly desired.</li>
+                                </ul>
+                            </div>
+                            <div class="job-tab-section mb-4">
+                                <h6>Job Posting - Primary Brand</h6>
+                                <p>Walt Disney International</p>
+                            </div>
+                            <div class="job-tab-section mb-4">
+                                <h6>Required Education</h6>
+                                <p>The position requires at least five years’ experience working in a creative or digital industry, ideally completing major projects for entertainment or media clients with a portfolio which represent creative storytelling and meaningful experiences. Depth in the UCD methodology, IA and innovative & responsive design is required.</p>
+                            </div>
+
+                            <div class="job-tab-section mb-4">
+                                <h6>Responsibilities</h6>
+                                <p>This role delivers UCD and creative concepts in line with brand identity and business objectives, and ensures brand quality and consistency.</p>
+                                <ul>
+                                    <li>Responsible for the quality, timely-delivery and ongoing improvement of creative designs and/or UX artefacts for the Disney, Marvel and Star Wars brands across centralised platforms, web products, Social, Apps, etc.</li>
+                                    <li>The role is both hands on and directive, for UX and Creative outputs, mapping customer behaviour, expectations and needs into customer flows and experience design, as well as educating and inspiring key stakeholders via presentations informed by UX methodologies.</li>
+                                    <li>The UX/UI Designer is a key member of the Creative Council, and is expected to drive continuous improvements for intuitive, scalable and adaptive solutions through established and innovative processes, as well as setting the expectations and highest standards for a creative and successful team attitude and professional development.</li>
+                                    <li>The role will drive continuous improvements on design and creative execution through established and innovative processes, both internally and with partner Agencies.</li>
+                                    <li>A key player in capturing and shaping personas to be referenced by digital team – ensuring outbound experiences deeply resonate with Disney audiences.</li>
+                                    <li>Responsible for the presentation and approval of creative concepts by actively engaging stakeholders in understanding user-centric design, balanced with technical constraints.</li>
+                                    <li>Engage with colleagues in the digital team and Business Unit stakeholders to uphold brand and site guidelines and design principles, and ensure consistent representation across multiple touch points.</li>
+                                    <li>Responsible for advocating and educating a user-centered and consumer focused design process, mapping out customer flows, wireframes and relevant UX artefacts.</li>
+                                    <li>Work with digital team leads to define project priorities & objectives.</li>
+                                    <li>Collaborate with Design Lead, Tech Lead , Analysts and Developers on web products, from proof of concept to execution of ideas.</li>
+                                    <li>Holistic understanding of the Disney business and how digital can integrate with other Business Units – e.g. Corporate Responsibility, studio releases.</li>
+                                    <li>Able to work closely with Producers and Business Unit stakeholders to negotiate the best execution against projects timelines and budgets.</li>
+                                    <li>Work with outside agencies to manage and be accountable for the quality of the user experience and creative output.</li>
+                                    <li>Supports communication of best practices, guidelines and other processes that support improved customer experience, engagement and sales.</li>
+                                    <li>Ensure a collaborative approach across Sydney and Melbourne locations -working as one voice, one vision.</li>
+                                    <li>Managing the output of junior designers, freelancers, design consultants, interns and external vendor designers as required.</li>
+                                </ul>
+                            </div>
+                            <div id="job-tab-section mb-4">
+                                <h6>Company Overview</h6>
+                                <p>From classic animated features and exhilarating theme park attractions to the hottest content on television and digital, The Walt Disney Company is the global leader in media and entertainment. For 90 years, our outstanding storytelling has enchanted, inspired and thrilled audiences everywhere. Now you have the opportunity to open a new chapter in your life with a career at Disney!</p>
+                            </div>
+                        </div>
+                        <div class="selected-job-listing-footer-wrapper text-right">
+                            <button type="button" class="btn selected-job-listing-button">View Data as Table</button>
+                            <button type="button" class="btn selected-job-listing-button">Report this Job</button>
+                        </div>
+                        <!--Company info goes here-->
+                        <div class="tab-pane fade" id="company" role="tabpanel" aria-labelledby="company-tab">Company info goes here</div>
+                        <!--Ratings info goes here-->
+                        <div class="tab-pane fade" id="ratings" role="tabpanel" aria-labelledby="rating-tab">Ratings info goes here</div>
+                        <!--Reviews info goes here-->
+                        <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">Reviews info goes here</div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- TODO-MOVE THIS SCRIPT INTO APP.JS -->
+    <script>
+        var slider = document.getElementById("range");
+        var output = document.getElementById("range-value");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function() {
+            output.innerHTML = this.value;
+        }
+    </script>
+
+<!-- Optional JavaScript -->
+<!-- Latest compiled and minified CSS & JS -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<!-- Chosen jQuery Plugin (Make selects easier to manage) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+<!-- My Scripts -->
+<script src="./app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,394 @@
+body {
+    background-color: #eaeaea;
+    color: #404040;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizelegibility;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+}
+
+.navbar-custom {
+    background-color: #fff;
+    border-bottom: 1px solid #bababa;
+}
+.nav-link {
+    color: #0d0d0d !important;
+}
+.nav-link-icon {
+    display: inline-block;
+}
+#sign-in-form {
+    background-color: #fff;
+    width: 350px;
+}
+.divider {
+    width: 100%;
+    height: 10px;
+    border-bottom: 1px solid #bababa;
+    text-align: center;
+}
+.divider-content {
+    background-color: #fff;
+    padding:0 20px 0 20px;
+}
+.btn {
+    border-radius: 2px;
+    font-size: 13px;
+    line-height: 30px;
+}
+input {
+    border-radius: 0 !important;
+    border-color: #bababa;
+    font-size:13px !important;
+    line-height:30px !important;
+}
+#google-login-button {
+    background-color: #fff;
+    border-color: #bababa;
+    color: #dc4e41;
+}
+#facebook-login-button {
+    background-color: #3a5998;
+}
+.button-icon-left {
+    float: left;
+    padding-top:5px;
+}
+.searchbar-wrapper {
+    background-color: #fff;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0,0,0,0.11);
+}
+#searchbar-search-field {
+    background: url('../images/navbar-icons/search.png') no-repeat scroll 10px 10px;
+    padding-left:40px;
+    background-color: #fff;
+    border-color:#bababa!important;
+}
+#searchbar-jobs-dropdown-button {
+    width: 100%;
+    background-color: #fff;
+    border-color: #bababa !important;
+}
+#searchbar-location-field {
+    border-color: #bababa;
+}
+#searchbar-search-button {
+    width:100%;
+    background-color: #07a93d;
+    color: #fff;
+}
+#footer-wrapper {
+    background-color: #404040;
+    color: #fff !important;
+}
+.footer-inside-wrapper {
+    border-top:1px solid #EAEAEA;
+}
+.footer-list {
+    list-style-type:none;
+}
+.footer-list a li {
+    margin-bottom:16px;
+    color: #fff;
+}
+.custom-dropdown-button {
+    width:200px;
+    margin:10px;
+}
+.dropdown-item{
+    color: #404040 !important;
+}
+/* BLUE SOLID BUTTON */
+.blue-hover-effect {
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    background-color: #1961bf;
+    color: #fff;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+.blue-hover-effect:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /*LEAVE THIS ALONE*/
+    background: #3a5998;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+.blue-hover-effect:hover, .blue-hover-effect:focus, .blue-hover-effect:active {
+    color: #fff;
+}
+.blue-hover-effect:hover:before, .blue-hover-effect:focus:before, .blue-hover-effect:active:before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+/* BLUE GHOST BUTTON */
+.blue-ghost-button {
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    border-color: #1961bf;
+    color: #1961bf;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+.blue-ghost-button:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #1961bf;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+.blue-ghost-button:hover, .blue-ghost-button:focus, .blue-ghost-button:active {
+    color: #fff;
+}
+.blue-ghost-button:hover:before, .blue-ghost-button:focus:before, .blue-ghost-button:active:before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+/* GREEN SOLID BUTTON */
+.green-hover-effect {
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    background-color: #07a93d;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+.green-hover-effect:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /*LEAVE THIS ALONE*/
+    background-color: #007549;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+.green-hover-effect:hover, .green-hover-effect:focus, .green-hover-effect:active {
+    color: white;
+}
+.green-hover-effect:hover:before, .green-hover-effect:focus:before, .green-hover-effect:active:before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+#filters-wrapper {
+    background-color: #fff;
+    border-bottom:1px solid #bababa;
+}
+.filters-dropdown-button {
+    border-color: #eaeaea;
+}
+#filter-range-wrapper{
+    width:370px !important;
+    padding:50px 30px 50px 30px;
+    background-color: #fff;
+}
+#main-content-left-col {
+    padding:0;
+    background-color: #eaeaea;
+    height: 800px;
+    overflow: auto;
+}
+#main-content-right-col {
+    padding:0 0 0 5px;
+    background-color: #eaeaea;
+    height: 800px;
+    overflow: auto;
+}
+.job-listing-wrapper {
+    height:120px;
+    background-color: #fff;
+    padding:20px;
+    border-bottom:1px solid #eaeaea;
+    position: relative;
+}
+.job-listing-title {
+    color: #1961bf;
+}
+.job-listing-salary {
+    color: #07a93d;
+}
+.job-listing-time {
+    position: absolute;
+    bottom:0;
+    right:0;
+    padding:20px 20px 15px 20px;
+}
+.job-listing-like {
+    position: absolute;
+    top:0;
+    right:0;
+    padding:30px 20px 15px 20px;
+    color: #07a93d;
+}
+.job-listing-link {
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left: 0;
+    z-index: 1;
+}
+.job-listing-buttons-wrapper {
+    position: absolute;
+    top:0;
+    right:0;
+    padding:30px 20px 15px 20px;
+    color: #07a93d;
+    z-index: 1;
+}
+#selected-job-listing-wrapper {
+    background-color: #fff;
+    padding:20px;
+    border-bottom:1px solid #eaeaea;
+    position: relative;
+}
+#selected-job-listing-tab-wrapper {
+    background-color: #fff;
+    border-bottom:1px solid #eaeaea;
+}
+.nav-tabs .nav-item {
+    margin:0 !important;
+}
+.nav-tabs .nav-item:hover {
+    background-color: #f2f2f2;
+    margin:0 !important;
+    color: #1961bf !important;
+}
+.selected-job-listing-tabs {
+    background-color: #fff;
+}
+.nav-tabs .nav-item a {
+    border:0 !important;
+    color: #1961bf !important;
+}
+.border-divide {
+    border-right:1px solid #EAEAEA;
+}
+/*TODO- CHANGE THIS TO JOB-TAB-CONTENT AND MAKE SURE TO UPDATE ALL ASSOCIATED INFO OR ELSE IT WILL NOT WORK*/
+#job {
+    background-color: #fff;
+}
+#page-wrapper {
+    background-color: #fff;
+    border-bottom:1px solid #eaeaea
+}
+a.page-link {
+    border-color: #eaeaea !important;
+    color: #1961bf;
+}
+#create-job-alert-wrapper {
+    background-color: #fff;
+    border-bottom:1px solid #eaeaea;
+    padding:30px 5px 20px 5px;
+}
+#related-searches-wrapper {
+    background-color: #fff;
+}
+
+#related-companies-wrapper {
+    background-color: #fff;
+    border-bottom:1px solid #eaeaea;
+}
+#main-content-left-footer {
+    background-color: #fff;
+    border-bottom:1px solid #eaeaea;
+}
+
+#main-content-left-dropdown-button {
+    border-color: #eaeaea;
+}
+#temp-company-bg-img {
+    height:70px;
+    background: url('../images/job-icons/temp-job-bg.png') no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+.selected-job-listing-footer-wrapper {
+    background-color:#eaeaea;
+}
+
+.selected-job-listing-button {
+    background-color: transparent;
+    color: #404040;
+}
+.text-inline {
+    display: inline;
+}
+.text-grey {
+    color: #eaeaea;
+}
+
+.blue-text {
+    color: #1961bf;
+}
+
+
+
+/*a:not([href]):not([tabindex]) {*/
+/*width:150px;*/
+/*border-color: lightgrey;*/
+/*box-shadow: none;*/
+/*}*/
