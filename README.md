@@ -1,5 +1,7 @@
 # my_Glassdoor
 
+https://nbdelpino1.github.io/my_Glassdoor/.
+
 
 #### The plan was to quickly redo the layout of an app I already made using Bootstrap 4, but at some point I think I got carried away. It morphed into trying to recreate the UI of the Glassdoor website. I really hope to keep working on this one.
 
@@ -12,3 +14,5 @@
 #### This is the actual Glassdoor website
 ![actual_glassdoor_content](https://user-images.githubusercontent.com/18251657/42789095-4b23b208-8931-11e8-90e7-b6d60d3fec72.png)
 ![actual_glassdoor-landing](https://user-images.githubusercontent.com/18251657/42789096-4b336ffe-8931-11e8-9126-843f01c5cdb4.png)
+
+
