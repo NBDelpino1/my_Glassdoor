@@ -6,7 +6,9 @@ body {
     font-family: 'Lato', sans-serif;
     font-size: 14px;
 }
-
+.w-700 {
+    font-weight:700;
+}
 .navbar-custom {
     background-color: #fff;
     border-bottom: 1px solid #bababa;
@@ -233,7 +235,7 @@ input {
 }
 #filters-wrapper {
     background-color: #fff;
-    border-bottom:1px solid #bababa;
+    border-bottom:1px solid #eaeaea;
 }
 .filters-dropdown-button {
     border-color: #eaeaea;
@@ -345,7 +347,6 @@ a.page-link {
 #related-searches-wrapper {
     background-color: #fff;
 }
-
 #related-companies-wrapper {
     background-color: #fff;
     border-bottom:1px solid #eaeaea;
@@ -354,7 +355,6 @@ a.page-link {
     background-color: #fff;
     border-bottom:1px solid #eaeaea;
 }
-
 #main-content-left-dropdown-button {
     border-color: #eaeaea;
 }
@@ -369,7 +369,6 @@ a.page-link {
 .selected-job-listing-footer-wrapper {
     background-color:#eaeaea;
 }
-
 .selected-job-listing-button {
     background-color: transparent;
     color: #404040;
@@ -380,7 +379,6 @@ a.page-link {
 .text-grey {
     color: #eaeaea;
 }
-
 .blue-text {
     color: #1961bf;
 }
